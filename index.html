@@ -201,6 +201,32 @@ footer{
   }
 }
 </style>
+
+  /* CLICKABLE OFFER */
+.offer-click{
+  display:block;
+  cursor:pointer;
+  text-decoration:none;
+  animation:offerPulse 2.5s infinite;
+}
+.offer-click span{
+  font-weight:700;
+}
+.offer-click em{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+  font-style:normal;
+  opacity:.9;
+}
+
+/* subtle pulse */
+@keyframes offerPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+  100%{transform:scale(1)}
+}
+
 </head>
 
 <body>
@@ -256,13 +282,22 @@ footer{
     <div class="amenity-card"><img src="clubhouse.jpg"><div class="content"><h4>Clubhouse & Pool</h4><p>Relaxed social spaces.</p></div></div>
     <div class="amenity-card"><img src="yoga.jpg"><div class="content"><h4>Yoga & Meditation</h4><p>Peaceful open gardens.</p></div></div>
     <div class="amenity-card"><img src="farming.jpg"><div class="content"><h4>Organic Farming</h4><p>Healthy sustainable living.</p></div></div>
-    <div class="amenity-card"><img src="roads.jpg"><div class="content"><h4>Wide Roads</h4><p>Green landscaped roads.</p></div></div>
+    <div class="amenity-card"><img src="roads.jfif"><div class="content"><h4>Wide Roads</h4><p>Green landscaped roads.</p></div></div>
     <div class="amenity-card"><img src="kids.jpg"><div class="content"><h4>Kids & Sports</h4><p>Active recreation spaces.</p></div></div>
     <div class="amenity-card"><img src="security.jpg"><div class="content"><h4>24×7 Security</h4><p>Safe gated community.</p></div></div>
   </div>
 </section>
 
-<div class="offer fade">🎉 ₹1000 / Sq.Yd Inaugural Discount on Instant Booking</div>
+<div <a 
+  href="https://wa.me/918851386063?text=Hi,%20I%20want%20to%20avail%20the%20₹1000%20per%20Sq.Yd%20Inaugural%20Discount%20at%20Vastu%20Heritage.%20Please%20share%20details."
+  target="_blank"
+  class="offer offer-click fade"
+>
+  🎉 <strong>Limited Time Offer:</strong>  
+  <span>Get ₹1000 / Sq.Yd OFF</span> on Instant Booking  
+  <em>→ Tap to Claim on WhatsApp</em>
+</a>
+</div>
 
 <section id="gallery" class="fade">
   <h2>Life at Vastu Heritage</h2><br>
@@ -322,6 +357,7 @@ window.addEventListener('scroll',()=>{
 
 </body>
 </html>
+
 
 
 
