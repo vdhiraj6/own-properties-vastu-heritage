@@ -276,10 +276,83 @@ footer{
     display:flex;
   }
 }
+/* POPUP OVERLAY */
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+/* POPUP BOX */
+.popup-box{
+  background:#fff;
+  padding:40px;
+  max-width:420px;
+  width:90%;
+  border-radius:18px;
+  text-align:center;
+  animation:popupIn .4s ease;
+}
+.popup-box h2{
+  margin-bottom:10px;
+  color:#1f5f3b;
+}
+.popup-box p{
+  font-size:14px;
+  margin-bottom:20px;
+}
+.popup-box input,
+.popup-box select,
+.popup-box textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-family:Inter;
+}
+.popup-box textarea{
+  min-height:80px;
+  resize:none;
+}
+
+/* POPUP ANIMATION */
+@keyframes popupIn{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
 </style>
 </head>
 
 <body>
+<!-- LEAD POPUP -->
+<div class="popup-overlay" id="leadPopup">
+  <div class="popup-box">
+    <h2>Get Complete Details</h2>
+    <p>Share your details to explore Vastu Heritage</p>
+
+    <form id="leadForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="tel" id="phone" placeholder="Mobile Number" required>
+      
+      <select id="plot">
+        <option value="">Interested Plot Size</option>
+        <option>1008 Sq.Yd</option>
+        <option>1200 Sq.Yd</option>
+        <option>1500 Sq.Yd</option>
+        <option>Custom Requirement</option>
+      </select>
+
+      <textarea id="message" placeholder="Your Message / Requirement"></textarea>
+
+      <button type="submit" class="btn">View Project Details</button>
+    </form>
+  </div>
+</div>
 
 <header class="header">
   <div class="nav-container">
@@ -426,7 +499,34 @@ window.addEventListener('scroll',()=>{
     }
   });
 });
-</script>
+
+
+/* STOP SCROLL */
+document.body.style.overflow = "hidden";
+
+/* FORM SUBMIT */
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const plot = document.getElementById("plot").value;
+  const msg = document.getElementById("message").value;
+
+  const text = `Hi, I am ${name}.
+Mobile: ${phone}
+Interested Plot: ${plot}
+Message: ${msg}`;
+
+  window.open(
+    `https://wa.me/918851386063?text=${encodeURIComponent(text)}`,
+    "_blank"
+  );
+
+  document.getElementById("leadPopup").style.display = "none";
+  document.body.style.overflow = "auto";
+});
+</script>
 
 </body>
 </html>
