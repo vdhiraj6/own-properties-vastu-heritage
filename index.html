@@ -256,6 +256,26 @@ footer{
     display:flex;
   }
 }
+/* RIGHT SIDE HEADER GROUP */
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* MOBILE HEADER ACTION ICONS */
+.mobile-actions{
+  display:none;
+  gap:10px;
+  align-items:center;
+}
+
+/* MOBILE ONLY */
+@media(max-width:900px){
+  .mobile-actions{
+    display:flex;
+  }
+}
 </style>
 </head>
 
@@ -278,6 +298,7 @@ footer{
     </nav>
 
     <!-- MOBILE CALL + WHATSAPP ICONS -->
+    <div class="header-right">
     <div class="mobile-actions">
       <a href="tel:+918851386063" class="icon-btn call" title="Call Now">📞</a>
       <a href="https://wa.me/918851386063" class="icon-btn whatsapp" title="WhatsApp">💬</a>
