@@ -231,6 +231,31 @@ footer{
   background:#1f5f3b;
   color:#fff;
 }
+/* MOBILE HEADER ACTION ICONS */
+.mobile-actions{
+  display:none;
+  gap:10px;
+  align-items:center;
+}
+
+.icon-btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  background:#1f5f3b;
+  color:#fff;
+}
+
+/* SHOW ONLY ON MOBILE */
+@media(max-width:900px){
+  .mobile-actions{
+    display:flex;
+  }
+}
 </style>
 </head>
 
@@ -238,7 +263,11 @@ footer{
 
 <header class="header">
   <div class="nav-container">
-    <div class="logo"><img src="logo.png" alt="Vastu Heritage"></div>
+
+    <div class="logo">
+      <img src="logo.png" alt="Vastu Heritage">
+    </div>
+
     <nav class="nav" id="navMenu">
       <a href="#about">About</a>
       <a href="#amenities">Amenities</a>
@@ -247,7 +276,16 @@ footer{
       <a href="#contact">Contact</a>
       <a class="nav-btn" href="https://wa.me/918851386063">WhatsApp</a>
     </nav>
+
+    <!-- MOBILE CALL + WHATSAPP ICONS -->
+    <div class="mobile-actions">
+      <a href="tel:+918851386063" class="icon-btn call" title="Call Now">📞</a>
+      <a href="https://wa.me/918851386063" class="icon-btn whatsapp" title="WhatsApp">💬</a>
+    </div>
+
+    <!-- HAMBURGER -->
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
   </div>
 </header>
 
