@@ -325,6 +325,22 @@ footer{
   from{transform:scale(.9);opacity:0}
   to{transform:scale(1);opacity:1}
 }
+/* POPUP CLOSE ICON */
+.popup-close{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-size:22px;
+  cursor:pointer;
+  color:#888;
+}
+.popup-close:hover{
+  color:#1f5f3b;
+}
+.popup-box{
+  position:relative;
+}
+
 </style>
 </head>
 
@@ -332,6 +348,11 @@ footer{
 <!-- LEAD POPUP -->
 <div class="popup-overlay" id="leadPopup">
   <div class="popup-box">
+
+<!-- CANCEL ICON -->
+<span class="popup-close"
+     oneclick="closepopup()">×</span>
+
     <h2>Get Complete Details</h2>
     <p>Share your details to explore Vastu Heritage</p>
 
@@ -501,8 +522,14 @@ window.addEventListener('scroll',()=>{
 });
 
 
-/* STOP SCROLL */
+/* DISABLE SCROLL ON LOAD */
 document.body.style.overflow = "hidden";
+
+/* CLOSE POPUP */
+function closePopup(){
+  document.getElementById("leadPopup").style.display = "none";
+  document.body.style.overflow = "auto";
+}
 
 /* FORM SUBMIT */
 document.getElementById("leadForm").addEventListener("submit", function(e){
@@ -523,9 +550,9 @@ Message: ${msg}`;
     "_blank"
   );
 
-  document.getElementById("leadPopup").style.display = "none";
-  document.body.style.overflow = "auto";
+  closePopup();
 });
+
 </script>
 
 </body>
