@@ -216,6 +216,21 @@ footer{
     border-radius:12px;
   }
 }
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.btn-outline{
+  background:transparent;
+  color:#1f5f3b;
+  border:2px solid #1f5f3b;
+}
+.btn-outline:hover{
+  background:#1f5f3b;
+  color:#fff;
+}
 </style>
 </head>
 
@@ -241,8 +256,10 @@ footer{
     <h1>Land That Lets You Breathe.</h1>
     <p>Premium farmland living near Yamuna Expressway & Jewar Airport.
 Starting at ₹6,900\- Par sqyd </p>
-    <a class="btn" href="https://wa.me/918851386063">Talk on WhatsApp</a>
-  </div>
+    <div class="hero-buttons">
+  <a class="btn" href="https://wa.me/918851386063">Talk on WhatsApp</a>
+  <a class="btn btn-outline" href="tel:+918851386063">Call Now</a>
+</div>
 </section>
 
 <div class="strip fade">
