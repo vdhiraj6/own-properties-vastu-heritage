@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Vastu Heritage – Premium Farmland Living</title>
-
 <meta name="description" content="Premium farmland & farmhouse plots near Yamuna Expressway and Jewar Airport. Luxury green living in Greater Noida.">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
@@ -60,8 +59,8 @@ a{text-decoration:none;color:inherit}
 .hero{
   min-height:100vh;
   background:
-  linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
-  url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover;
+    linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee") center/cover;
   display:flex;
   align-items:center;
 }
@@ -122,10 +121,7 @@ a{text-decoration:none;color:inherit}
   object-fit:cover;
 }
 .amenity-card .content{padding:26px}
-.amenity-card h4{
-  color:#1f5f3b;
-  margin-bottom:6px;
-}
+.amenity-card h4{color:#1f5f3b}
 
 /* GALLERY */
 .gallery{
@@ -146,8 +142,28 @@ a{text-decoration:none;color:inherit}
 .offer{
   background:#d4a437;
   text-align:center;
-  padding:22px;
+  padding:24px;
   font-weight:600;
+}
+
+/* CLICKABLE OFFER */
+.offer-click{
+  display:block;
+  cursor:pointer;
+  animation:offerPulse 2.5s infinite;
+}
+.offer-click span{font-weight:700}
+.offer-click em{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+  font-style:normal;
+  opacity:.9;
+}
+@keyframes offerPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+  100%{transform:scale(1)}
 }
 
 /* CONTACT */
@@ -200,41 +216,14 @@ footer{
     border-radius:12px;
   }
 }
-
-  /* CLICKABLE OFFER */
-.offer-click{
-  display:block;
-  cursor:pointer;
-  text-decoration:none;
-  animation:offerPulse 2.5s infinite;
-}
-.offer-click span{
-  font-weight:700;
-}
-.offer-click em{
-  display:block;
-  font-size:13px;
-  margin-top:6px;
-  font-style:normal;
-  opacity:.9;
-}
-
-/* subtle pulse */
-@keyframes offerPulse{
-  0%{transform:scale(1)}
-  50%{transform:scale(1.03)}
-  100%{transform:scale(1)}
-}
-
 </style>
-
 </head>
 
 <body>
 
 <header class="header">
   <div class="nav-container">
-    <div class="logo"><img src="logo.jpeg"></div>
+    <div class="logo"><img src="logo.jpeg" alt="Vastu Heritage"></div>
     <nav class="nav" id="navMenu">
       <a href="#about">About</a>
       <a href="#amenities">Amenities</a>
@@ -265,10 +254,7 @@ footer{
 <section id="about" class="two fade">
   <div>
     <h2>More Than Land. It’s a Second Life.</h2>
-    <p>
-      Vastu Heritage is a premium farmland community designed for peace,
-      privacy and long-term value — surrounded by nature yet close to growth corridors.
-    </p>
+    <p>Premium farmland community designed for peace, privacy and long-term value.</p>
   </div>
   <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
 </section>
@@ -294,11 +280,10 @@ footer{
   target="_blank"
   class="offer offer-click fade"
 >
-  🎉 <strong>Limited Time Offer:</strong>  
-  <span>Get ₹1000 / Sq.Yd OFF</span> on Instant Booking  
+  🎉 <strong>Limited Time Offer:</strong>
+  <span>Get ₹1000 / Sq.Yd OFF</span> on Instant Booking
   <em>→ Tap to Claim on WhatsApp</em>
 </a>
-
 
 <section id="gallery" class="fade">
   <h2>Life at Vastu Heritage</h2><br>
@@ -358,8 +343,3 @@ window.addEventListener('scroll',()=>{
 
 </body>
 </html>
-
-
-
-
-
