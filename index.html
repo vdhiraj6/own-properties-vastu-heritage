@@ -340,7 +340,29 @@ footer{
 .popup-box{
   position:relative;
 }
-  
+  /* SLIM RENTAL INCOME STRIP */
+.rental-strip{
+  padding:26px 6vw;        /* patli height */
+  font-size:16px;
+}
+
+.rental-strip p{
+  margin:0;
+  font-size:17px;
+  font-family:Inter, sans-serif;
+  text-align:center;
+}
+
+/* Mobile thoda aur slim */
+@media(max-width:900px){
+  .rental-strip{
+    padding:18px 6vw;
+  }
+  .rental-strip p{
+    font-size:15px;
+  }
+}
+
 </style>
 </head>
 
@@ -419,9 +441,9 @@ Starting at ₹6,900\- Per sq.yd </p>
   <div>Low Density Planning</div>
 </div>
 
-  <section class="statement fade">
-  <p style="margin-top:16px;font-size:18px;font-family:Inter;">
-    Earn up to <strong>₹2 Lakh annual rental income</strong> from your farmland.
+  <section class="statement fade rental-strip">
+  <p>
+    Earn upto <strong>₹2 Lakh annual rental income</strong> from your farmland.
   </p>
 </section>
 
