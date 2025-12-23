@@ -340,6 +340,25 @@ footer{
 .popup-box{
   position:relative;
 }
+.call-icon{
+  width:16px;
+  height:16px;
+  border:2px solid #fff;
+  border-radius:50%;
+  position:relative;
+}
+
+.call-icon::after{
+  content:'';
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#fff;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
 
 </style>
 </head>
@@ -390,7 +409,9 @@ footer{
     <!-- MOBILE CALL + WHATSAPP ICONS -->
     <div class="header-right">
     <div class="mobile-actions">
-      <a href="tel:+918851386063" class="icon-btn call" title="Call Now">📞</a>
+      <a href="tel:+918851386063" class="icon-btn call" title="Call Now">
+  <span class="call-icon"></span>
+</a>
       <a href="https://wa.me/918851386063" class="icon-btn whatsapp" title="WhatsApp">💬</a>
     </div>
 
