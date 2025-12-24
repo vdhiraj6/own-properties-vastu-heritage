@@ -529,25 +529,46 @@ function closePopup(){
 document.getElementById("leadForm").addEventListener("submit", function(e){
   e.preventDefault();
 
-  const name = document.getElementById("name").value;
+  const name  = document.getElementById("name").value;
   const phone = document.getElementById("phone").value;
-  const plot = document.getElementById("plot").value;
-  const msg = document.getElementById("message").value;
+  const plot  = document.getElementById("plot").value;
+  const msg   = document.getElementById("message").value;
 
-  const text = `Hi, I am ${name}.
-Mobile: ${phone}
-Interested Plot: ${plot}
-Message: ${msg}`;
+  /* 🔗 GOOGLE FORM POST URL */
+  const googleFormURL =
+    "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
 
+  const formData = new FormData();
+  formData.append("entry.123456", name);
+  formData.append("entry.654321", phone);
+  formData.append("entry.111111", plot);
+  formData.append("entry.222222", msg);
+
+  fetch(googleFormURL, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors"
+  });
+
+  /* 🔔 GTM EVENT */
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({
+    event: "lead_form_submit",
+    lead_name: name,
+    lead_phone: phone,
+    lead_plot: plot
+  });
+
+  /* OPTIONAL: WhatsApp redirect */
   window.open(
-    `https://wa.me/918851386063?text=${encodeURIComponent(text)}`,
+    `https://wa.me/918851386063?text=Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`,
     "_blank"
   );
 
   closePopup();
 });
-
 </script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
 <script>
