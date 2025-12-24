@@ -526,47 +526,61 @@ function closePopup(){
 }
 
 /* FORM SUBMIT */
-document.getElementById("leadForm").addEventListener("submit", function(e){
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-  const name  = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const plot  = document.getElementById("plot").value;
-  const msg   = document.getElementById("message").value;
+  const form = document.getElementById("leadForm");
 
-  /* 🔗 GOOGLE FORM POST URL */
-  const googleFormURL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
-  
-  const formData = new FormData();
-  formData.append("entry.935673995", name);
-  formData.append("entry.1515239054", phone);
-  formData.append("entry.1388036362", plot);
-  formData.append("entry.1811394587", msg);
+  if (!form) return;
 
-  fetch(googleFormURL, {
-    method: "POST",
-    body: formData,
-    mode: "no-cors"
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name  = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const plot  = document.getElementById("plot").value;
+    const msg   = document.getElementById("message").value;
+
+    /* GOOGLE FORM */
+    const googleFormURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
+
+    const formData = new FormData();
+    formData.append("entry.935673995", name);
+    formData.append("entry.1515239054", phone);
+    formData.append("entry.1388036362", plot);
+    formData.append("entry.1811394587", msg);
+
+    fetch(googleFormURL, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+
+    /* ✅ GTM EVENT — MUST FIRE BEFORE REDIRECT */
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_form_submit",
+      lead_name: name,
+      lead_phone: phone,
+      lead_plot: plot,
+      lead_source: "popup_form"
+    });
+
+    /* ⏱️ DELAY REDIRECT SO GTM CAN CATCH EVENT */
+    setTimeout(function () {
+      window.open(
+        "https://wa.me/918851386063?text=" +
+          encodeURIComponent(
+            `Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`
+          ),
+        "_blank"
+      );
+      closePopup();
+    }, 800); // 👈 VERY IMPORTANT
   });
 
-  /* 🔔 GTM EVENT */
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({
-    event: "lead_form_submit",
-    lead_name: name,
-    lead_phone: phone,
-    lead_plot: plot
-  });
-
-  /* OPTIONAL: WhatsApp redirect */
-  window.open(
-    `https://wa.me/918851386063?text=Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`,
-    "_blank"
-  );
-
-  closePopup();
 });
+  
 </script>
 
 <!-- Google tag (gtag.js) -->
