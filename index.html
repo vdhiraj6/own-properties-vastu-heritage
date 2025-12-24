@@ -1,200 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Event snippet for Contact conversion page -->
-  <script>
-    gtag('event', 'conversion', {'send_to': 'AW-955537942/Nx1HCMr189UbEJa00ccD'});
-  </script>
+<title>Vastu Heritage – Premium Farmland Living</title>
+<meta name="description" content="Premium farmland & farmhouse plots near Yamuna Expressway and Jewar Airport. Luxury green living in Greater Noida.">
 
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7624748086951084"
-    crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-adsense-account" content="ca-pub-7624748086951084">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,sans-serif;
+  background:#f9fbf8;
+  color:#1e2d24;
+  line-height:1.7;
+}
+section{padding:110px 6vw}
+h1,h2,h3,h4{font-family:'Playfair Display',serif}
+img{width:100%;border-radius:18px}
+a{text-decoration:none;color:inherit}
 
-  <title>Vastu Heritage – Premium Farmland Living</title>
-  <meta name="description" content="Premium farmland & farmhouse plots near Yamuna Expressway and Jewar Airport. Luxury green living in Greater Noida.">
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  background:#ffffffcc;
+  backdrop-filter:blur(10px);
+  z-index:999;
+  border-bottom:1px solid #e3efe8;
+}
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:10px 6vw;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo img{height:58px}
+.nav{
+  display:flex;
+  gap:26px;
+  align-items:center;
+}
+.nav a{font-size:14px;font-weight:500}
+.nav-btn{
+  padding:10px 22px;
+  background:#1f5f3b;
+  color:#fff;
+  border-radius:30px;
+}
+.menu-toggle{display:none;font-size:26px}
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
+    url("background.jpg") center/cover;
+  display:flex;
+  align-items:center;
+}
+.hero h1{font-size:60px;max-width:820px}
+.hero p{margin-top:20px;font-size:20px;max-width:620px}
+.btn{
+  display:inline-block;
+  padding:16px 42px;
+  border-radius:50px;
+  background:#1f5f3b;
+  color:#fff;
+  margin-top:30px;
+}
 
-  <style>
-    /* ===== CSS SAME AS YOURS (ONLY ALIGNED) ===== */
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,sans-serif;
-      background:#f9fbf8;
-      color:#1e2d24;
-      line-height:1.7;
-    }
-    section{padding:110px 6vw}
-    h1,h2,h3,h4{font-family:'Playfair Display',serif}
-    img{width:100%;border-radius:18px}
-    a{text-decoration:none;color:inherit}
+/* STRIP */
+.strip{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  background:#eef6f1;
+  text-align:center;
+  padding:40px 6vw;
+  font-weight:500;
+}
 
-    /* HEADER */
-    .header{
-      position:sticky;
-      top:0;
-      background:#ffffffcc;
-      backdrop-filter:blur(10px);
-      z-index:999;
-      border-bottom:1px solid #e3efe8;
-    }
-    .nav-container{
-      max-width:1200px;
-      margin:auto;
-      padding:10px 6vw;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo img{height:58px}
-    .nav{display:flex;gap:26px;align-items:center;}
-    .nav a{font-size:14px;font-weight:500}
-    .nav-btn{
-      padding:10px 22px;
-      background:#1f5f3b;
-      color:#fff;
-      border-radius:30px;
-    }
-    .menu-toggle{display:none;font-size:26px}
+/* TWO COL */
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
 
-    /* HERO */
-    .hero{
-      min-height:100vh;
-      background:
-        linear-gradient(rgba(255,255,255,.65),rgba(255,255,255,.65)),
-        url("background.jpg") center/cover;
-      display:flex;
-      align-items:center;
-    }
-    .hero h1{font-size:60px;max-width:820px}
-    .hero p{margin-top:20px;font-size:20px;max-width:620px}
+/* STATEMENT */
+.statement{
+  background:#1f5f3b;
+  color:#fff;
+  text-align:center;
+  font-size:46px;
+  padding:110px 6vw;
+}
 
-    .btn{
-      display:inline-block;
-      padding:16px 42px;
-      border-radius:50px;
-      background:#1f5f3b;
-      color:#fff;
-      margin-top:30px;
-    }
+/* AMENITIES */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+.amenity-card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  transition:.35s ease;
+}
+.amenity-card:hover{transform:translateY(-8px)}
+.amenity-card img{
+  height:200px;
+  object-fit:cover;
+}
+.amenity-card .content{padding:26px}
+.amenity-card h4{color:#1f5f3b}
 
-    /* STRIP */
-    .strip{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-      background:#eef6f1;
-      text-align:center;
-      padding:40px 6vw;
-      font-weight:500;
-    }
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
+}
 
-    /* TWO COL */
-    .two{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:center;
-    }
+/* PRICE */
+.price{
+  background:#fff;
+  border-radius:22px;
+  padding:45px;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
 
-    /* STATEMENT */
-    .statement{
-      background:#1f5f3b;
-      color:#fff;
-      text-align:center;
-      font-size:46px;
-      padding:110px 6vw;
-    }
+/* OFFER */
+.offer{
+  background:#d4a437;
+  text-align:center;
+  padding:24px;
+  font-weight:600;
+}
 
-    /* AMENITIES */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-    }
-    .amenity-card{
-      background:#fff;
-      border-radius:22px;
-      overflow:hidden;
-      box-shadow:0 15px 40px rgba(0,0,0,.08);
-      transition:.35s ease;
-    }
-    .amenity-card:hover{transform:translateY(-8px)}
-    .amenity-card img{height:200px;object-fit:cover;}
-    .amenity-card .content{padding:26px}
-    .amenity-card h4{color:#1f5f3b}
+/* CLICKABLE OFFER */
+.offer-click{
+  display:block;
+  cursor:pointer;
+  animation:offerPulse 2.5s infinite;
+}
+.offer-click span{font-weight:700}
+.offer-click em{
+  display:block;
+  font-size:13px;
+  margin-top:6px;
+  font-style:normal;
+  opacity:.9;
+}
+@keyframes offerPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+  100%{transform:scale(1)}
+}
 
-    /* GALLERY */
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:22px;
-    }
+/* CONTACT */
+.contact{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+}
+form input,form textarea{
+  width:100%;
+  padding:16px;
+  margin-top:14px;
+  border:1px solid #cfded6;
+  border-radius:10px;
+}
+.map iframe{
+  width:100%;
+  min-height:360px;
+  border:0;
+  border-radius:18px;
+}
 
-    /* PRICE */
-    .price{
-      background:#fff;
-      border-radius:22px;
-      padding:45px;
-      box-shadow:0 15px 40px rgba(0,0,0,.08);
-    }
+/* FOOTER */
+footer{
+  padding:60px 6vw;
+  background:#1f5f3b;
+  color:#eaf4ee;
+  text-align:center;
+}
 
-    /* OFFER */
-    .offer{
-      background:#d4a437;
-      text-align:center;
-      padding:24px;
-      font-weight:600;
-    }
-    .offer-click{
-      display:block;
-      cursor:pointer;
-      animation:offerPulse 2.5s infinite;
-    }
-    @keyframes offerPulse{
-      0%{transform:scale(1)}
-      50%{transform:scale(1.03)}
-      100%{transform:scale(1)}
-    }
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s}
+.fade.show{opacity:1;transform:none}
 
-    /* CONTACT */
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:60px;
-    }
-    form input,form textarea{
-      width:100%;
-      padding:16px;
-      margin-top:14px;
-      border:1px solid #cfded6;
-      border-radius:10px;
-    }
+/* MOBILE */
+@media(max-width:900px){
+  .hero h1{font-size:40px}
+  .two,.contact{grid-template-columns:1fr}
+  .statement{font-size:30px}
+  .nav{display:none}
+  .menu-toggle{display:block}
+  .nav.show{
+    display:flex;
+    position:absolute;
+    right:20px;
+    top:70px;
+    background:#fff;
+    flex-direction:column;
+    padding:20px;
+    border-radius:12px;
+  }
+}
+.hero-buttons{
+  display:flex;
+  gap:16px;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
+.btn-outline{
+  background:transparent;
+  color:#1f5f3b;
+  border:2px solid #1f5f3b;
+}
+.btn-outline:hover{
+  background:#1f5f3b;
+  color:#fff;
+}
+/* MOBILE HEADER ACTION ICONS */
+.mobile-actions{
+  display:none;
+  gap:10px;
+  align-items:center;
+}
 
-    /* FOOTER */
-    footer{
-      padding:60px 6vw;
-      background:#1f5f3b;
-      color:#eaf4ee;
-      text-align:center;
-    }
+.icon-btn{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  background:#1f5f3b;
+  color:#fff;
+}
 
-    /* ANIMATION */
-    .fade{opacity:0;transform:translateY(40px);transition:1s}
-    .fade.show{opacity:1;transform:none}
-  </style>
+/* SHOW ONLY ON MOBILE */
+@media(max-width:900px){
+  .mobile-actions{
+    display:flex;
+  }
+}
+/* RIGHT SIDE HEADER GROUP */
+.header-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+/* MOBILE HEADER ACTION ICONS */
+.mobile-actions{
+  display:none;
+  gap:10px;
+  align-items:center;
+}
+
+/* MOBILE ONLY */
+@media(max-width:900px){
+  .mobile-actions{
+    display:flex;
+  }
+}
+/* POPUP OVERLAY */
+.popup-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+/* POPUP BOX */
+.popup-box{
+  background:#fff;
+  padding:40px;
+  max-width:420px;
+  width:90%;
+  border-radius:18px;
+  text-align:center;
+  animation:popupIn .4s ease;
+}
+.popup-box h2{
+  margin-bottom:10px;
+  color:#1f5f3b;
+}
+.popup-box p{
+  font-size:14px;
+  margin-bottom:20px;
+}
+.popup-box input,
+.popup-box select,
+.popup-box textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-family:Inter;
+}
+.popup-box textarea{
+  min-height:80px;
+  resize:none;
+}
+
+/* POPUP ANIMATION */
+@keyframes popupIn{
+  from{transform:scale(.9);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+/* POPUP CLOSE ICON */
+.popup-close{
+  position:absolute;
+  top:12px;
+  right:14px;
+  font-size:22px;
+  cursor:pointer;
+  color:#888;
+}
+.popup-close:hover{
+  color:#1f5f3b;
+}
+.popup-box{
+  position:relative;
+}
+
+</style>
 </head>
 
 <body>
-
-<!-- POPUP -->
+<!-- LEAD POPUP -->
 <div class="popup-overlay" id="leadPopup">
   <div class="popup-box">
-    <span class="popup-close" onclick="closePopup()">x</span>
+
+<!-- CANCEL ICON -->
+<span class="popup-close"
+     oneclick="closepopup()">×</span>
 
     <h2>Get Complete Details</h2>
     <p>Share your details to explore Vastu Heritage</p>
@@ -206,86 +363,196 @@
       <select id="plot">
         <option value="">Interested Plot Size</option>
         <option>1008 Sq.Yd</option>
-        <option>1512 Sq.Yd</option>
-        <option>2016 Sq.Yd</option>
+        <option>1200 Sq.Yd</option>
+        <option>1500 Sq.Yd</option>
         <option>Custom Requirement</option>
       </select>
 
       <textarea id="message" placeholder="Your Message / Requirement"></textarea>
+
       <button type="submit" class="btn">View Project Details</button>
     </form>
   </div>
 </div>
 
+<header class="header">
+  <div class="nav-container">
+
+    <div class="logo">
+      <img src="logo.png" alt="Vastu Heritage">
+    </div>
+
+    <nav class="nav" id="navMenu">
+      <a href="#about">About</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-btn" href="https://wa.me/918851386063">WhatsApp</a>
+    </nav>
+
+    <!-- MOBILE CALL + WHATSAPP ICONS -->
+    <div class="header-right">
+    <div class="mobile-actions">
+      <a href="tel:+918851386063" class="icon-btn call" title="Call Now">📞</a>
+      <a href="https://wa.me/918851386063" class="icon-btn whatsapp" title="WhatsApp">💬</a>
+    </div>
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  </div>
+</header>
+
+<section class="hero fade">
+  <div>
+    <h1>Land That Lets You Breathe.</h1>
+    <p>100 Acer Premium farmland township living near Pari chowk,Yamuna Expressway & Jewar Airport.
+Starting at ₹6,900\- Par sq.yd </p>
+    <div class="hero-buttons">
+  <a class="btn" href="https://wa.me/918851386063">Talk on WhatsApp</a>
+  <a class="btn btn-outline" href="tel:+918851386063">Call Now</a>
+</div>
+</section>
+
+<div class="strip fade">
+  <div>Gated Farmland Community</div>
+  <div>pari chowk - 10 Minutes</div>
+  <div>Jewar Airport – 20 Minutes</div>
+  <div>Registry Ready Farmlands </div>
+  <div>Low Density Planning</div>
+</div>
+
+<section id="about" class="two fade">
+  <div>
+    <h2>More Than Land. It’s a Second Life.</h2>
+    <p>Premium farmland community designed for peace, privacy and long-term value.</p>
+  </div>
+  <img src="01.jpg">
+</section>
+
+<section class="statement fade">
+  Wake up to open skies.<br>Sleep surrounded by silence.
+</section>
+
+<section id="amenities" class="fade">
+  <h2>Curated for Everyday Calm</h2><br>
+  <div class="cards">
+    <div class="amenity-card"><img src="clubhouse.jpg"><div class="content"><h4>Clubhouse & Pool</h4><p>Relaxed social spaces.</p></div></div>
+    <div class="amenity-card"><img src="yoga.jpg"><div class="content"><h4>Yoga & Meditation</h4><p>Peaceful open gardens.</p></div></div>
+    <div class="amenity-card"><img src="farming.jpg"><div class="content"><h4>Organic Farming</h4><p>Healthy sustainable living.</p></div></div>
+    <div class="amenity-card"><img src="roads.jfif"><div class="content"><h4>Wide Roads</h4><p>Green landscaped roads.</p></div></div>
+    <div class="amenity-card"><img src="kids.jpg"><div class="content"><h4>Kids & Sports</h4><p>Active recreation spaces.</p></div></div>
+    <div class="amenity-card"><img src="security.jpg"><div class="content"><h4>24×7 Security</h4><p>Safe gated community.</p></div></div>
+  </div>
+</section>
+
+<a 
+  href="https://wa.me/918851386063?text=Hi,%20I%20want%20to%20avail%20the%20₹1000%20per%20Sq.Yd%20Inaugural%20Discount%20at%20Vastu%20Heritage.%20Please%20share%20details."
+  target="_blank"
+  class="offer offer-click fade"
+>
+  🎉 <strong>Limited Time Offer:</strong>
+  <span>Get ₹1000 / Sq.Yd OFF</span> on Instant Booking
+  <em>→ Tap to Claim on WhatsApp</em>
+</a>
+
+<section id="gallery" class="fade">
+  <h2>Life at Vastu Heritage</h2><br>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429">
+    <img src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9">
+    <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470">
+  </div>
+</section>
+<a 
+  href="https://wa.me/918851386063?text=Hi,%20I%20want%20to%20avail%20the%20₹1000%20per%20Sq.Yd%20Inaugural%20Discount%20at%20Vastu%20Heritage.%20Please%20share%20details."
+  target="_blank"
+  class="offer offer-click fade"
+>
+  🎉 <strong>Limited Time Offer:</strong>
+  <span>Get ₹1000 / Sq.Yd OFF</span> on Instant Booking
+  <em>→ Tap to Claim on WhatsApp</em>
+</a>
+
+<section id="pricing" class="two fade">
+  <div class="price">
+    <h3>Down Payment Plan</h3>
+    <p><strong>₹6,900 / Sq.Yd</strong><br>20% Booking<br>70% in 15 Days<br>10% Registry</p>
+  </div>
+  <div class="price">
+    <h3>Flexi Payment Plan</h3>
+    <p><strong>₹7,900 / Sq.Yd</strong><br>20% Booking<br>30% in 30 Days<br>50% Registry</p>
+  </div>
+</section>
+
+<section id="contact" class="contact fade">
+  <div>
+    <h2>Get in Touch</h2>
+    <form>
+      <input placeholder="Full Name">
+      <input placeholder="Mobile Number">
+      <textarea placeholder="Message"></textarea>
+      <a class="btn" href="https://wa.me/918851386063">Submit Enquiry</a>
+    </form>
+  </div>
+  <div class="map">
+    <iframe src="https://www.google.com/maps?q=Sector%20Techzone%20Greater%20Noida&output=embed"></iframe>
+  </div>
+</section>
+
+<footer>
+  <p>Vastu Heritage – Premium Farmland Living</p>
+  <p>Sector Techzone, Greater Noida | +91 88513 86063</p>
+  <p>© 2025 Vastu Heritage</p>
+</footer>
+
 <script>
-  function toggleMenu(){
-    document.getElementById("navMenu").classList.toggle("show");
-  }
-
-  document.body.style.overflow = "hidden";
-
-  function closePopup(){
-    document.getElementById("leadPopup").style.display = "none";
-    document.body.style.overflow = "auto";
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-
-    const form = document.getElementById("leadForm");
-    if (!form) return;
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name  = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const plot  = document.getElementById("plot").value;
-      const msg   = document.getElementById("message").value;
-
-      const googleFormURL =
-        "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
-
-      const formData = new FormData();
-      formData.append("entry.935673995", name);
-      formData.append("entry.1515239054", phone);
-      formData.append("entry.1388036362", plot);
-      formData.append("entry.1811394587", msg);
-
-      fetch(googleFormURL,{
-        method:"POST",
-        body:formData,
-        mode:"no-cors"
-      });
-
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event:"lead_form_submit",
-        lead_name:name,
-        lead_phone:phone,
-        lead_plot:plot,
-        lead_source:"popup_form"
-      });
-
-      setTimeout(function(){
-        window.open(
-          "https://wa.me/918851386063?text=" +
-          encodeURIComponent(`Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`),
-          "_blank"
-        );
-        closePopup();
-      },800);
-
-    });
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("show");
+}
+const f=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+  f.forEach(el=>{
+    if(el.getBoundingClientRect().top<window.innerHeight-100){
+      el.classList.add('show');
+    }
   });
-</script>
+});
 
-<!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-955537942');
+
+/* DISABLE SCROLL ON LOAD */
+document.body.style.overflow = "hidden";
+
+/* CLOSE POPUP */
+function closePopup(){
+  document.getElementById("leadPopup").style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+/* FORM SUBMIT */
+document.getElementById("leadForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const plot = document.getElementById("plot").value;
+  const msg = document.getElementById("message").value;
+
+  const text = `Hi, I am ${name}.
+Mobile: ${phone}
+Interested Plot: ${plot}
+Message: ${msg}`;
+
+  window.open(
+    https://wa.me/918851386063?text=${encodeURIComponent(text)},
+    "_blank"
+  );
+
+  closePopup();
+});
+
 </script>
 
 </body>
