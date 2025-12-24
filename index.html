@@ -3,14 +3,13 @@
 <html lang="en">
 <head>
   <!-- Event snippet for Contact conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-955537942/Nx1HCMr189UbEJa00ccD'});
-</script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7624748086951084"
      crossorigin="anonymous"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="google-adsense-account" content="ca-pub-7624748086951084">
+  
 <title>Vastu Heritage – Premium Farmland Living</title>
 <meta name="description" content="Premium farmland & farmhouse plots near Yamuna Expressway and Jewar Airport. Luxury green living in Greater Noida.">
 
@@ -517,7 +516,9 @@ window.addEventListener('scroll',()=>{
 
 
 /* DISABLE SCROLL ON LOAD */
-document.body.style.overflow = "hidden";
+if (document.getElementById("leadPopup")) {
+  document.body.style.overflow = "hidden";
+}
 
 /* CLOSE POPUP */
 function closePopup(){
@@ -526,27 +527,60 @@ function closePopup(){
 }
 
 /* FORM SUBMIT */
-document.getElementById("leadForm").addEventListener("submit", function(e){
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
 
-  const name = document.getElementById("name").value;
-  const phone = document.getElementById("phone").value;
-  const plot = document.getElementById("plot").value;
-  const msg = document.getElementById("message").value;
+  const form = document.getElementById("leadForm");
 
-  const text = `Hi, I am ${name}.
-Mobile: ${phone}
-Interested Plot: ${plot}
-Message: ${msg}`;
+  if (!form) return;
 
-  window.open(
-    `https://wa.me/918851386063?text=${encodeURIComponent(text)}`,
-    "_blank"
-  );
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  closePopup();
+    const name  = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const plot  = document.getElementById("plot").value;
+    const msg   = document.getElementById("message").value;
+
+    /* GOOGLE FORM */
+    const googleFormURL =
+      "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
+
+    const formData = new FormData();
+    formData.append("entry.935673995", name);
+    formData.append("entry.1515239054", phone);
+    formData.append("entry.1388036362", plot);
+    formData.append("entry.1811394587", msg);
+
+    fetch(googleFormURL, {
+      method: "POST",
+      body: formData,
+      mode: "no-cors"
+    });
+
+    /* ✅ GTM EVENT — MUST FIRE BEFORE REDIRECT */
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "lead_form_submit",
+      lead_name: name,
+      lead_phone: phone,
+      lead_plot: plot,
+      lead_source: "popup_form"
+    });
+
+    /* ⏱️ DELAY REDIRECT SO GTM CAN CATCH EVENT */
+    setTimeout(function () {
+      window.open(
+        "https://wa.me/918851386063?text=" +
+          encodeURIComponent(
+            `Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`
+          ),
+        "_blank"
+      );
+      closePopup();
+    }, 800); // 👈 VERY IMPORTANT
+  });
+
 });
-
 </script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
@@ -557,5 +591,14 @@ Message: ${msg}`;
 
   gtag('config', 'AW-955537942');
 </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-955537942');
+</script>
+
 </body>
+  
 </html>
