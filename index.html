@@ -536,13 +536,13 @@ document.getElementById("leadForm").addEventListener("submit", function(e){
 
   /* 🔗 GOOGLE FORM POST URL */
   const googleFormURL =
-    "https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse";
-
+    "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
+  
   const formData = new FormData();
-  formData.append("entry.123456", name);
-  formData.append("entry.654321", phone);
-  formData.append("entry.111111", plot);
-  formData.append("entry.222222", msg);
+  formData.append("entry.935673995", name);
+  formData.append("entry.1515239054", phone);
+  formData.append("entry.1388036362", plot);
+  formData.append("entry.1811394587", msg);
 
   fetch(googleFormURL, {
     method: "POST",
