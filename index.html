@@ -581,116 +581,115 @@ Starting at ₹6,900\- Par sq.yd </p>
 </footer>
 
 <script>
+/* MENU TOGGLE */
 function toggleMenu(){
   document.getElementById("navMenu").classList.toggle("show");
 }
-const f=document.querySelectorAll('.fade');
-window.addEventListener('scroll',()=>{
-  f.forEach(el=>{
-    if(el.getBoundingClientRect().top<window.innerHeight-100){
+
+/* FADE ON SCROLL */
+const f = document.querySelectorAll('.fade');
+window.addEventListener('scroll', () => {
+  f.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
       el.classList.add('show');
     }
   });
 });
 
-
-/* DISABLE SCROLL ON LOAD */
-if (document.getElementById("leadPopup")) {
-  document.body.style.overflow = "hidden";
-}
-
-/* CLOSE POPUP */
-function closePopup(){
-  document.getElementById("leadPopup").style.display = "none";
-  document.body.style.overflow = "auto";
-}
-
-/* FORM SUBMIT */
+/* DISABLE SCROLL IF POPUP EXISTS */
 document.addEventListener("DOMContentLoaded", function () {
 
-  const form = document.getElementById("leadForm");
+  const popup = document.getElementById("leadPopup");
+  const form  = document.getElementById("leadForm");
 
-  if (!form) return;
+  if (popup) {
+    document.body.style.overflow = "hidden";
+  }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+  /* FORM SUBMIT */
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    const name  = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const plot  = document.getElementById("plot").value;
-    const msg   = document.getElementById("message").value;
+      const name  = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const plot  = document.getElementById("plot").value;
+      const msg   = document.getElementById("message").value;
 
-    /* GOOGLE FORM */
-    const googleFormURL =
-      "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
+      /* GOOGLE FORM */
+      const googleFormURL =
+        "https://docs.google.com/forms/d/e/1FAIpQLSeiHoYIvh1mbzsfNVEbzkfc3IuIVWNN6jR2Cu1idxQHCYltcQ/formResponse";
 
-    const formData = new FormData();
-    formData.append("entry.935673995", name);
-    formData.append("entry.1515239054", phone);
-    formData.append("entry.1388036362", plot);
-    formData.append("entry.1811394587", msg);
+      const formData = new FormData();
+      formData.append("entry.935673995", name);
+      formData.append("entry.1515239054", phone);
+      formData.append("entry.1388036362", plot);
+      formData.append("entry.1811394587", msg);
 
-    fetch(googleFormURL, {
-      method: "POST",
-      body: formData,
-      mode: "no-cors"
-    });
+      fetch(googleFormURL, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors"
+      });
 
-    /* ✅ GTM EVENT — MUST FIRE BEFORE REDIRECT */
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "lead_form_submit",
-      lead_name: name,
-      lead_phone: phone,
-      lead_plot: plot,
-      lead_source: "popup_form"
-    });
+      /* GTM EVENT */
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "lead_form_submit",
+        lead_name: name,
+        lead_phone: phone,
+        lead_plot: plot,
+        lead_source: "popup_form"
+      });
 
-    /* ⏱️ DELAY REDIRECT SO GTM CAN CATCH EVENT */
-    setTimeout(function () {
-      window.open(
-        "https://wa.me/918851386063?text=" +
+      /* REDIRECT AFTER GTM FIRES */
+      setTimeout(() => {
+        window.open(
+          "https://wa.me/918851386063?text=" +
           encodeURIComponent(
             `Hi, I am ${name}. Phone: ${phone}. Plot: ${plot}`
           ),
-        "_blank"
-      );
-      closePopup();
-    }, 800); // 👈 VERY IMPORTANT
-  });
-
+          "_blank"
+        );
+        closePopup();
+      }, 800);
+    });
+  }
 });
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-955537942');
-</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-955537942');
-</script>
-  <script>
+/* CLOSE POPUP */
+function closePopup(){
+  const popup = document.getElementById("leadPopup");
+  if (popup) popup.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+/* IMAGE LIGHTBOX */
 function openLightbox(src){
   const lightbox = document.getElementById("lightbox");
   const img = document.getElementById("lightbox-img");
+  if (!lightbox || !img) return;
   img.src = src;
   lightbox.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
 
 function closeLightbox(){
-  document.getElementById("lightbox").style.display = "none";
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) lightbox.style.display = "none";
   document.body.style.overflow = "auto";
 }
 </script>
+
+<!-- Google tag (gtag.js) — ONLY ONCE -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'AW-955537942');
+</script>
+
 
 
 </body>
