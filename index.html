@@ -374,6 +374,50 @@ footer{
     max-height:85%;
   }
 }
+/* LAYOUT PREVIEW */
+.layout-preview{
+  margin-top:30px;
+  text-align:center;
+}
+
+.layout-preview img{
+  max-width:100%;
+  height:auto;
+  border-radius:16px;
+  cursor:pointer;
+  box-shadow:0 15px 40px rgba(0,0,0,.15);
+  transition:transform .3s ease;
+}
+
+.layout-preview img:hover{
+  transform:scale(1.02);
+}
+
+/* LIGHTBOX */
+#lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+}
+
+#lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:14px;
+}
+
+#lightbox .close-btn{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:40px;
+  color:#fff;
+  cursor:pointer;
+}
 
 </style>
 </head>
@@ -537,8 +581,8 @@ Starting at ₹6,900\- Par sq.yd </p>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img">
   <span class="close-btn">×</span>
+  <img id="lightbox-img">
 </div>
 
 
@@ -680,6 +724,7 @@ function closeLightbox(){
   document.body.style.overflow = "auto";
 }
 </script>
+  
 
 <!-- Google tag (gtag.js) — ONLY ONCE -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-955537942"></script>
